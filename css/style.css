@@ -1,0 +1,102 @@
+/*全局的设计*/
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: montserrat;
+    box-sizing: border-box;
+}
+
+/*表格格式*/
+.login-form{
+    width: 360px;
+    background:rgba(0, 0, 0, 0.5);
+    height: 320px;
+    padding: 80px 40px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login-form h1{
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+}
+
+
+.txtb{
+    border-bottom: 2px solid #adadaa;
+    position: relative;
+    margin: 30px 0;
+}
+
+/*设置输入文本框*/
+ .txtb input{
+     font-size: 15px;
+     color: white;
+     border: none;
+     width: 100%;
+     outline: none;
+     background:none;
+     padding:0 5px;
+     height: 40px;
+ }
+
+ /*设置输入前的提示语格式*/
+ .txtb span::before{
+     content: attr(data-placeholder);
+     position: absolute;
+     top:50%;
+     left: 0px;
+     color: white;
+     transform: translateY(-50%);
+     z-index: -1;
+     transition: .5s;
+ }
+
+ /*点击了文本框后也就是那两条彩色线的特效*/
+ .txtb span::after{
+     content: '';
+     position: absolute;
+     top: 40px;
+     width: 0%;
+     left: 0px;
+     height: 2px;
+     background: linear-gradient(120deg,#bdc3c7,#ecf0f1);
+     transition: .5s;
+ }
+
+/*JS用到的类名以及作用的位置*/
+ .focus + span::before{
+     top: -5px;
+ }
+ .focus + span::after{
+    width: 100%;
+ }
+
+
+ .logbtn{
+     display: block;
+     width: 100%;
+     height: 50px;
+     border: none;
+     background: linear-gradient(120deg,#bdc3c7,#ecf0f1,#bdc3c7);
+     background-size: 200%;
+     color: #2c3e50;
+     outline: none;
+     cursor: pointer;
+     transition: .5s;
+ }
+
+ .logbtn:hover{
+     background-position: right;
+ }
+
+ .bottom-text{
+     margin-top: 60px;
+     text-align: center;
+     font-size: 13px;
+ }
