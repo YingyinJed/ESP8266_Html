@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+
+    display: flex;/*显示内容居中*/
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*按钮的样式配置*/
+label{
+    /*运动按钮行动的边框*/
+    transform: scale(1);/*作个小变形，变大了*/
+    width: 100px;
+    height: 50px;
+    border: solid 1px #ddd;/*边框*/
+    background: #ddd;
+    border-radius: 25px;/*两边呈现圆角,因为总高度是50所以用25两边正好包裹出半圆*/    
+    position: relative;/*为运动的小圆提供一个相对定位*/
+    overflow: hidden;/*隐藏边框让后面的填充色呈圆角*/
+}
+/*隐藏音库的标签*/
+label input{
+    visibility: hidden;/*让里面的元素隐藏*/
+}
+/*开始在里面配置元素即运动的小圆
+使用checkbox里的伪元素*/
+label input::after{
+    visibility: visible;/*让这个元素可见*/
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;/*下边是绝对上边利用了上面提供的相对定位*/
+    left: 0;
+    top: 0;
+    background: #fff;
+    border-radius: 50%;/*将小方块变成圆形*/
+    /*进一步定位*/
+    left: 5px;
+    top: 5px;
+    transition: all 0.2s;/*0.2秒完成这些操作*/
+}
+/*以上都是布局而已，接下来完成动画
+使用transition完成
+动画当然是点击后产生效果*/
+label input:checked::after{
+    transform: translate(50px);/*移动50个像素点*/
+}
+/*点击后的颜色填充的格式*/
+label input::before{
+    visibility: visible;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: all 0.4s;/*0.2秒完成这些操作*/
+}
+/*真正去设置按钮背后的颜色*/
+label input:checked::before{
+    background:rgb(0, 255, 115, 0.842);
+}
+

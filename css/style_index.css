@@ -19,14 +19,14 @@
     top: 50%;
     transform: translate(-50%,-50%);
 }
-
+/*标题，被我省略了*/
 .login-form h1{
     text-align: center;
     margin-bottom: 60px;
     color: white;
 }
 
-
+/*对所有txtb类进行一个总体的设计*/
 .txtb{
     border-bottom: 2px solid #adadaa;
     position: relative;
@@ -69,7 +69,8 @@
      transition: .5s;
  }
 
-/*JS用到的类名以及作用的位置*/
+/*JS用到的类名以及作用的位置
+其作用主要是用户名上移的动画*/
  .focus + span::before{
      top: -5px;
  }
@@ -77,7 +78,7 @@
     width: 100%;
  }
 
-
+/*登录按键的样式*/
  .logbtn{
      display: block;
      width: 100%;
@@ -95,8 +96,10 @@
      background-position: right;
  }
 
+/*按钮的文本*/
  .bottom-text{
      margin-top: 60px;
      text-align: center;
      font-size: 13px;
  }
+
