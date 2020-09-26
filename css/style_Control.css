@@ -3,19 +3,34 @@
     padding: 0;
 }
 
-body{
-    height: 100vh;
+#grid-container {
+    display:grid;
+    width:500px;
+    height:100%;
+    grid-template-rows:repeat(15,1fr);/*这个是设置垂直方向的切割*/
+    grid-template-columns: repeat(15,1fr);/*这个是设置水平方向的切割*/
+}
 
-    display: flex;/*显示内容居中*/
-    justify-content: center;
-    align-items: center;
+.cell-1{
+    grid-row: 0/1;/*决定多高*/
+    grid-column: 1/9;/*决定多长*/
+    
+}
 
+.Control_name{
+    height: 80%;
+    width: 60%;
+    font-size: 30px;
+    border: none;
+    background:rgba(164, 249, 255,0);
 }
 
 /*按钮的样式配置*/
 label{
     /*运动按钮行动的边框*/
     transform: scale(1);/*作个小变形，变大了*/
+    grid-row: 2/3;
+    grid-column: 1/9;
     width: 100px;
     height: 50px;
     border: solid 1px #ddd;/*边框*/

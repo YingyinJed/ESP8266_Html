@@ -8,12 +8,46 @@
     
     <script src="js/jquery-3.4.1.min.js"></script>
 
-    <title>控制系统</title>    
+    <title>控制系统</title>  
+
+    <style>
+        body{
+        height: 100vh;
+        display: flex;/*显示内容居中*/
+        justify-content: center;
+        align-items: center;
+        background:url(css/CLOSE.jpg) no-repeat;
+        background-position:center;
+        background-size:500px 100%;
+        }
+    </style>
 </head>
 <body>
-    <!--将按钮以label包裹起来达到像IOS按钮一样的效果-->
-    <label>
-        <input  type="checkbox" class="checkbox">
-    </label>
-</body>
+    
+
+    <div id="grid-container">
+        
+        <div class="cell-1">
+            <input class="Control_name" value="门锁开关" disabled>
+        </div>
+        <!--将按钮以label包裹起来达到像IOS按钮一样的效果-->
+        <label>
+            <input  type="checkbox" class="checkbox" id="Door_Key">
+        </label>        
+    </div>
+    
+    <script type="text/javascript">
+         $("#Door_Key").click(function() {
+        if ($(this).is(":checked")== true) {
+           $("body").css("background","url(css/OPEN.jpg)no-repeat");  
+           $("body").css("background-position","center");  
+           $("body").css("background-size","500px 100%");
+        } else {
+            $("body").css("background","url(css/CLOSE.jpg)no-repeat");  
+            $("body").css("background-position","center");
+            $("body").css("background-size","500px 100%");
+        }
+    });
+    </script>
+</body>    
 </html>
